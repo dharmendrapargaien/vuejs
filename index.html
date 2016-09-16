@@ -1,0 +1,85 @@
+<html>
+	<head>
+		<title> Home | Vuejs</title>
+		<link href="dist/css/vendor.min.css" rel="stylesheet" type="text/css">
+		<link href="dist/css/app.min.css" rel="stylesheet" type="text/css">
+		
+		<script type="text/javascript">
+			var appVariable = {};
+		</script>
+	</head>
+	<body class="container">
+		<div id="app">
+			<div>
+				 <a v-link="{ path: '/home' }">Go to Home</a>
+			</div>
+			
+			<div>
+				
+				<h1> {{ message}} </h1>
+				<input v-model="message">
+				<input type="color">
+				
+			</div>
+			
+			<div>
+				<form>
+					<div class="error" v-show = "! textMessage">
+						you must enter a message
+					</div>
+					<div>
+						
+						<textarea v-model="textMessage"></textarea>
+					</div>
+				</form>
+			</div>
+
+			<div>
+				<form @submit.prevent="testSubmit">
+					<input v-model="name">
+					<button type="submit" >Submit</button>
+				</form>
+			</div>
+			
+			<div>
+
+				<counter subject="Likes"></counter>
+				<counter subject="Dislikes"></counter>
+				
+				<template id="counter-template">
+					<h2>Hading</h2>
+					<button @click="count += 1">Increment {{ count }}</button>
+				</template>
+			</div>
+			
+			<div>
+				
+				<input type="text" v-model="points"></input>
+				Skills:{{skill}}
+			</div>
+	
+			<div>
+				<h3>	{{ fullName }}  </h3>
+
+				<input type="text" v-model="first"></input>
+				<input type="text" v-model="last"></input>
+
+			</div>
+
+			<div>
+				<template id="plan-template">
+					<div>
+						<span class="plan__name"> {{ plan.name}} </span>
+						<span class="plan__price"> {{ plan.price}}/month </span>
+						<button @click="setActivePlan">
+							{{ isUpgrade ? "Upgrade" : "Downgrade"}}
+						</button>
+					</div>
+				</template>			
+			</div>
+			<router-view></router-view>
+		</div>
+		<script src="dist/js/vendor.min.js"></script>
+		<script src="dist/js/app.js"></script>
+	</body>
+</html>

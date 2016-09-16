@@ -1,0 +1,27 @@
+{
+  "name": "vuejs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dharmendrapargaien/vuejs.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dharmendrapargaien/vuejs/issues"
+  },
+  "homepage": "https://github.com/dharmendrapargaien/vuejs#readme",
+  "dependencies": {
+    "jquery": "~2.1.0",
+    "vue": "^1.0.26-csp"
+  },
+  "devDependencies": {
+    "laravel-elixir": "6.0.0-11",
+    "laravel-elixir-webpack-official": "^1.0.5"
+  }
+}
